@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <!-- Add these permissions here -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- If targeting Android 13 or higher, add this permission as well -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" /> <!-- alarm (notif) permessions -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +18,20 @@
         android:theme="@style/Theme.EchoOfYou02"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DisplayCapsuleActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".AddCapsuleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +39,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
